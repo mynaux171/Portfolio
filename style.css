@@ -1,0 +1,237 @@
+/* bước reset CSS */
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+/* box-sizing: tránh lỗi tràn thông tin */
+}
+
+body {
+/* phối màu nền: (css.gradient)*/
+background: radial-gradient(circle,rgb(255, 112, 212) 0%, rgb(255, 255, 255) 100%);
+min-height: 100vh;
+/* xử lí chiều cao nhỏ nhất của body */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 11px;
+
+
+}
+
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    background: linear-gradient(to right, #77329a, #c0357a);
+    background-clip: text;
+    color: transparent;
+
+    /* cách chuyển màu từ background sang chữ */
+}
+/* tất cả ul trong thẻ nav */
+nav ul {
+display: flex;
+gap: 30px;
+list-style: none;
+
+}
+
+nav a {
+text-decoration: none;
+color: rgb(16, 21, 24);
+}
+
+/* fontawesome.com: web chuyên icon */
+.button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    background-color: #ea97d4;
+    border: none;
+    outline: none;
+    display: flex;
+    gap: 10px;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.content {
+    color: rgba(144, 68, 140, 0.701);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content > h1 {
+    font-size: 55px;
+    font-weight: 1000;
+
+}
+
+.content > h1 > span {
+font-size: 65px;
+font-weight: 1000;
+background: linear-gradient(to right, #77329a, #c0357a);
+background-clip: text;
+color: transparent;
+}
+
+.content > p:nth-of-type(1) {
+/* sử dụng pseudo class: trỏ tới thẻ p đầu tiên trong class content vì đang có 2 p
+Syntax:   selecter:pseudo class() */
+font-size: 35px;
+color: #b73476;
+}
+
+.content > p:nth-of-type(2) {
+    font-size: 25px;
+    color: #ba3a7aa2;
+    background: linear-gradient(90deg,rgba(186, 58, 122, 0.8) 33.5%, rgba(255, 255, 255, 0.9) 38.5%);
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-wrapper > .btn--start:hover {
+    /* hover: di chuột vào sẽ tự chạy hiệu ứng bên trong */
+    transform: scaleX(1.08);
+    /* transform là để tạo hiệu ứng */
+    transition: all 0.3s ease-in;
+    /* theo thứ tự: áp dụng toàn bộ, thời gian chạy effect, tên effect */
+    box-shadow: rgba(103, 42, 104, 0.877) 0px 7px 17px;
+}
+
+.btn-wrapper > .btn--read {
+    color: #000000;
+    padding: 12px 25px;
+    background-color: transparent;
+    border-radius: 25px;
+    outline: none;
+    border: 1px #c17eaf solid;
+    position: relative;
+    overflow: hidden;
+    /* để nó fit */
+}
+
+.btn-wrapper > .btn--read::before {
+/* before: lớp trên cái nút read */
+content: "";
+position: absolute;
+background-color: #bb3998;
+width: 0%;
+height: 100%;
+/* cho nó vào đúng ô:*/
+top: 0;
+left: 0;
+/* tạo hiệu ứng: */
+transition: all 0.5s ease;
+z-index: -1;
+}
+
+.btn-wrapper > .btn--read:hover {
+color: white;
+}
+
+.btn-wrapper > .btn--read:hover::before {
+    width: 100%;
+    }
+    
+
+.box-img {
+    width: 50%;
+    /* điều chỉnh kích thước ảnh img */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box-img > img {
+    max-width: 100%;
+    object-fit: contain;
+
+}
+.special-gothic-expanded-one-regular {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.special-gothic-regular {
+    font-family: "Special Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.unbounded {
+    font-family: "Unbounded", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* weight from 200-900 */
+    font-style: normal;
+}
+  
+.acme-regular {
+  font-family: "Acme", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playwrite-cu-italic {
+    font-family: "Playwrite CU", cursive;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    /* weight from 100-400 */
+    font-style: normal;
+}
+  
+.rubik-dirt-regular {
+    font-family: "Rubik Dirt", system-ui;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.playwrite-gb-s-unitalic {
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    /* weight from 100-900 */
+    font-style: normal;
+}
+
+.paprika-regular {
+    font-family: "Paprika", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lora {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    /* weight from 400-700 */
+    font-style: normal;
+}

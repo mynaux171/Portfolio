@@ -19,8 +19,12 @@
     rel="stylesheet">
     <!-- fontawesome.cdn : đuôi .cdn để lấy link tag của các web 
     có thể lấy font chữ ở google fonts-->
+    
 </head>
 <body>
+    <div id="particles-js"></div>
+    <script src="particles.js"></script>
+
     <div class="container">
         <!-- Ctrl+Shift+P ->Wrap with Ab... -> đặt tên thẻ + tên class -->
         <header>
@@ -29,7 +33,9 @@
             </div>
             <nav class="playwrite-gb-s-unitalic">
                 <ul>
-                    <!-- ul: tạo nút -->
+                    <!-- ul: tạo danh sách không thứ tự (dấu chấm)
+                         li: phần tử trong danh sách
+                         nav (navigation): khu vực điều hướng, chứa các thanh điều hướng của web -->
                     <li>
                         <a href="#"> <i class="fa-solid fa-house"></i>  Home </a>
                     </li>
@@ -48,12 +54,15 @@
                 <button class="button unbounded">
                     <span> Contact </span>
                     <i class="fa-solid fa-phone"></i>
-                </button>
+                </button>   
+
+                <div class="bar"> <i class="fa-solid fa-bars"></i> </div>
+                <!-- chỉ hiện khi thu nhỏ màn hình -->
             </div>
         </header>
 
         <main>
-            <div class="content paprika-regular">
+            <div class="content playwrite-gb-s-unitalic">
                 <h1>Hi, I'm <span>My Xuan</span></h1>
                 <p class="lora">Front End developer HTML & CSS. </p>
                 <p class="lora">Familiar with Back End basics (Java, C).</p>
@@ -69,15 +78,32 @@
                     </button>
                 </div>
             </div>
+            
             <div class="box-img">
                 <img src="./img/cuti.png" alt="">
             </div>
         </main>
+
+        <footer class="playwrite-gb-s-unitalic">
+            <div class="relative">           
+                <div class="social-icon">
+                <a href="https://www.instagram.com/mynaux_?igsh=MXhpdWRlNzFnb2h6NA%3D%3D&utm_source=qr" target="_blank"> <i class="fa-brands fa-instagram"></i> </a>
+                <a href="https://www.facebook.com/share/1E3J7zmUNF/?mibextid=wwXIfr" target="_blank"> <i class="fa-brands fa-facebook"></i> </a>
+                <a href="https://github.com/mynaux171"> <i class="fa-brands fa-github" target="_blank"></i> </a>
+                </div>
+            </div>    
+            <p>
+                © My Xuan. All rights reserved.
+            </p>
+        </footer>
     </div>
 
 
 
 
-
+<!-- cdn lấy thư viện rồi mới link tới app.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="./app.js"></script>
+<!-- luôn để Script ở cuối phần body -->
 </body>
 </html>

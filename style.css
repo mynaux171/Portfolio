@@ -46,6 +46,7 @@ header {
     background: linear-gradient(to right, #77329a, #c0357a);
     background-clip: text;
     color: transparent;
+    padding: 0px 5px 5px;
     /* cách chuyển màu từ background sang chữ */
 }
 /* tất cả ul trong thẻ nav */
@@ -90,11 +91,15 @@ main {
     height: fit-content;
     justify-content: center;
     align-items: flex-start;
+    flex-direction: column;
     margin-top: 50px;
 }
 
+.intro {
+    display: flex;
+}
+
 .content {
-    color: rgba(144, 68, 140, 0.701);
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -102,6 +107,7 @@ main {
 }
 
 .content > h1 {
+    color: rgba(144, 68, 140, 0.701);
     font-size: 55px;
     font-weight: 2000;
 
@@ -115,7 +121,7 @@ font-weight: 4000;
 background: linear-gradient(to right, #77329a, #c0357a);
 background-clip: text;
 color: transparent;
-padding-bottom: 10px;
+padding: 0px 10px 10px;
 }
 
 .content > p:nth-of-type(1) {
@@ -163,7 +169,7 @@ color: #b73476;
 }
 
 .btn-wrapper > .btn--read::before {
-/* before: lớp trên cái nút read */
+/* before: lớp trên cái nút More */
 content: "";
 position: absolute;
 background-color: #bb3998;
@@ -171,7 +177,7 @@ width: 0%;
 height: 100%;
 /* cho nó vào đúng ô:*/
 top: 0;
-left: 0;
+right: 0;
 /* tạo hiệu ứng: */
 transition: all 0.5s ease;
 z-index: -1;
@@ -189,17 +195,56 @@ color: white;
 .box-img {
     width: 50%;
     /* điều chỉnh kích thước ảnh img */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
 }
 
-.box-img > img {
+.box-img img {
     max-width: 100%;
     object-fit: contain;
 
 }
+
+.block {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    color: #3f083d;
+    padding: 70px 50px;
+    margin: auto 0;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #ec9aff;
+    padding: 30px;
+    width: 290px;
+    height: 120px;
+    text-align: center;
+}
+
+.a {background-image: linear-gradient(to right, #ffcdf6 0%, #ee84ecc8  51%, #FBD3E9  100%)}
+.a {
+   margin: 10px;
+   padding: 20px;
+   text-align: center;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color:#5a4160;            
+   box-shadow: 0 0 20px #1b0202;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .a:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #4f0337;
+   text-decoration: none;
+   transform: scale(1.11);
+ }
+
+
 
 footer {
     position: relative;
@@ -227,7 +272,6 @@ footer {
     justify-content: center;
     align-items: flex-end;
     gap:25px;
-    
   }
 
 .social-icon a {
@@ -314,17 +358,46 @@ footer > p {
 
 /* chỉnh sửa giao diện ở dạng điện thoại */
 @media (max-width: 765px) {
-    /* khi màn hình đạt tới 900px thì code này sẽ chạy */
-    .container header nav ,
+    /* khi màn hình đạt tới 765px thì code này sẽ chạy */
+
     .container header .button {
         display: none;
     }
 
-    .bar {
-        display: block;
+    nav {
+        position: fixed;
+        right: -100%;
+        top: 2%;
+        height: 50%;
+        width: 50%;
+        background-color: #b334747c;
+        padding: 20px;
+        border-radius: 10px;
+        transition: all 0.8s ease;
     }
 
-    main {
+    nav.active {
+        right: 0;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 60px;
+
+    }
+
+    .bar {
+        position: relative;
+        display: block;
+        right: 8px;
+        transition: all 0.5s ease;
+    }
+    
+    .bar:hover {
+        transform: scale(1.2);
+    }
+
+    .intro {
+        width: 100%;
         flex-wrap: wrap-reverse;
         /* xuống hàng */
         justify-content: center;
@@ -333,8 +406,16 @@ footer > p {
     }
 
     .content {
+        width: 100%;
+        flex-wrap: wrap;
+        margin: auto 0;
         justify-content: center;
-        align-items: center;        
+        align-items: center;    
+        text-align: center;  
+    }
+
+    .button {
+        background-color: #e15abbcd;
     }
 
 }
@@ -347,6 +428,7 @@ footer > p {
     .content h1 {
         white-space: nowrap;
         font-size: 50px;
+        
     }
     .content h1 span {
         font-size: 60px;        

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="./style.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
@@ -11,7 +11,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
     <link href="https://fonts.googleapis.com/css2?family=Special+Gothic&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Paprika&display=swap" rel="stylesheet">
@@ -23,7 +23,6 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    <script src="particles.js"></script>
 
     <div class="container">
         <!-- Ctrl+Shift+P ->Wrap with Ab... -> đặt tên thẻ + tên class -->
@@ -31,7 +30,7 @@
             <div class="logo playwrite-gb-s-unitalic">
                 My Xuan
             </div>
-            <nav class="playwrite-gb-s-unitalic">
+            <nav id="mobile-nav" class="playwrite-gb-s-unitalic">
                 <ul>
                     <!-- ul: tạo danh sách không thứ tự (dấu chấm)
                          li: phần tử trong danh sách
@@ -56,32 +55,59 @@
                     <i class="fa-solid fa-phone"></i>
                 </button>   
 
-                <div class="bar"> <i class="fa-solid fa-bars"></i> </div>
+                <div id="menu-toggle" class="bar"> 
+                    <i id="open-nav" class="fa-solid fa-bars"></i> 
+                    <i style="display: none;" id="close-nav" class="fa-solid fa-xmark"></i>
+                </div>
                 <!-- chỉ hiện khi thu nhỏ màn hình -->
             </div>
-        </header>
+        </header>   
 
         <main>
-            <div class="content playwrite-gb-s-unitalic">
-                <h1>Hi, I'm <span>My Xuan</span></h1>
-                <p class="lora">Front End developer HTML & CSS. </p>
-                <p class="lora">Familiar with Back End basics (Java, C).</p>
-                <p class="lora"> Strong eye for design and detail. Passionate about crafting intuitive, elegant user experiences.</p>
-                <div class="btn-wrapper">
-                    <button class="btn--start button unbounded">
-                        <i class="fa-solid fa-star"></i>
-                        Start
-                    </button>
-                    <button class="btn--read button unbounded">
-                        <i class="fa-solid fa-bookmark"></i>
-                        More
-                    </button>
+            <div class="intro">
+                <div class="content playwrite-gb-s-unitalic">
+                    <h1 id="title">Hi, I'm <span>My Xuan</span></h1>
+                    <p id="description" class="lora">Front End developer HTML & CSS. </p>
+                    <p class="lora">Familiar with Back End basics (Java, C).</p>
+                    <p class="lora"> Strong eye for design and detail. Passionate about crafting intuitive, elegant user experiences.</p>
+                    <div class="btn-wrapper">
+                        <button class="btn--start button unbounded">
+                            <i class="fa-solid fa-star"></i>
+                            Start
+                        </button>
+                        <button class="btn--read button unbounded">
+                            <i class="fa-solid fa-bookmark"></i>
+                            More
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="box-img">
+                    <img src="./img/cuti.png" alt="">
                 </div>
             </div>
-            
-            <div class="box-img">
-                <img src="./img/cuti.png" alt="">
+
+            <div class="block lora">
+                    <div class="card a">
+                        <i class="fa-solid fa-palette"></i>
+                        <h3>Design Tools</h3>
+                        <p>Learn popular design tools</p>
+                    </div>
+
+                    <div class="card a">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>Coding</h3>
+                        <p>Basic of HTML & CSS</p>
+                    </div>
+
+                <div class="card a">
+                    <i class="fa-regular fa-comments"></i>
+                    <h3>Community</h3>
+                    <p>Join our design community</p>
+                </div>
+
             </div>
+
         </main>
 
         <footer class="playwrite-gb-s-unitalic">
@@ -89,7 +115,7 @@
                 <div class="social-icon">
                 <a href="https://www.instagram.com/mynaux_?igsh=MXhpdWRlNzFnb2h6NA%3D%3D&utm_source=qr" target="_blank"> <i class="fa-brands fa-instagram"></i> </a>
                 <a href="https://www.facebook.com/share/1E3J7zmUNF/?mibextid=wwXIfr" target="_blank"> <i class="fa-brands fa-facebook"></i> </a>
-                <a href="https://github.com/mynaux171"> <i class="fa-brands fa-github" target="_blank"></i> </a>
+                <a href="https://github.com/mynaux171" target="_blank"> <i class="fa-brands fa-github"></i> </a>
                 </div>
             </div>    
             <p>
@@ -104,6 +130,8 @@
 <!-- cdn lấy thư viện rồi mới link tới app.js -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="./app.js"></script>
-<!-- luôn để Script ở cuối phần body -->
+<script src="particles.js"></script>
+<script src="./index.js"></script>
+<!-- luôn để Script ở cuối phần body, VÌ code chạy từ trên xuống -->
 </body>
 </html>
